@@ -33,10 +33,10 @@ public class Carta {
     
     public String toString(){
         StringBuilder sb = new StringBuilder();
-        sb.append("La Carta es el ");
         sb.append(numero);
         sb.append(" de ");
         sb.append(palo);
         return sb.toString();
     }
 }
+
