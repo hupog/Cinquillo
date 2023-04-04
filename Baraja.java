@@ -12,7 +12,7 @@ import cola.EnlazadaCola;
 
 public class Baraja {
 
-    private Cola <Carta> baraja;    //La baraja va ha ser una cola de cartas
+    private final Cola <Carta> baraja;    //La baraja va ha ser una cola de cartas
     
     public Baraja (){
         baraja = new EnlazadaCola<>();
@@ -69,8 +69,8 @@ public class Baraja {
          * por las situadas en el 0 hasta el final del array
          */
 
-        for (int k = 0; k < arrayCartas.length;k++){
-             baraja.insertar(arrayCartas[k]);
+        for (Carta arrayCarta : arrayCartas) {
+            baraja.insertar(arrayCarta);
         }
     }
     
