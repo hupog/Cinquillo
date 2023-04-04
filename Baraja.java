@@ -18,16 +18,16 @@ public class Baraja {
         baraja = new EnlazadaCola<>();
         
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Espadas",i));
+            baraja.insertar(new Carta("Espadas",i + 1));
         }
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Oros",i));
+            baraja.insertar(new Carta("Oros",i + 1));
         }
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Bastos",i));
+            baraja.insertar(new Carta("Bastos",i + 1));
         }
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Copas",i));
+            baraja.insertar(new Carta("Copas",i + 1));
         }
     }
     
