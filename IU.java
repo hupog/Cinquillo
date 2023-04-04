@@ -60,7 +60,9 @@ public class IU {
     public Collection<String> pedirDatosJugadores(){
         Collection<String> jugadores = new ArrayList();
         int numJugadores = 0;
+        do{
         numJugadores = leeNum("Cuantos jugadores van a jugar?: ");
+        }while(numJugadores != 3 && numJugadores != 4);
         for (int i = 0; i < numJugadores; i++) {
             String nombre;
             nombre = leeString("Como se llamará el jugador?: ");
@@ -72,7 +74,7 @@ public class IU {
 
 
     public void mostrarJugador(Jugador jugador){
-        
+
     }
 
     public void mostrarJugadores(Collection<Jugador> jugadores){
