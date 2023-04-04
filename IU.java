@@ -9,6 +9,7 @@ import es.uvigo.esei.aed1.core.Jugador;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.InputMismatchException;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class IU {
@@ -72,14 +73,16 @@ public class IU {
     }
 
 
-
     public void mostrarJugador(Jugador jugador){
-
+        System.out.println(jugador.getNombre());
+        jugador.enseñarMano();
     }
 
     public void mostrarJugadores(Collection<Jugador> jugadores){
-
+        Iterator<Jugador> it = jugadores.iterator();
+        for (int i = 0; i < jugadores.size(); i++) {
+            mostrarJugador(it.next());
+        }
     }
-   
     
 }
