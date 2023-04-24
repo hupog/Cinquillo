@@ -81,8 +81,11 @@ public class Mesa {
                     Carta aux = mesa.get(j).removeLast();
                     sb.append(aux.toString()).append("\t");
                     mesa.get(j).addFirst(aux);
+                }else{
+                    sb.append("X\t");
                 }
             }
+            sb.append("\n");
         }
         return sb.toString();
     }
