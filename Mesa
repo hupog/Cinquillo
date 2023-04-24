@@ -75,5 +75,15 @@ public class Mesa {
         StringBuilder sb = new StringBuilder();
         
         Iterator<Carta> iterator = mesa.get(1).iterator();
+        for(int i = 10; i > 0; i--){
+            for(int j = 0;j < 4;j++){
+                if(mesa.get(j).getLast().getNumero() == i){
+                    Carta aux = mesa.get(j).removeLast();
+                    sb.append(aux.toString()).append("\t");
+                    mesa.get(j).addFirst(aux);
+                }
+            }
+        }
+        return sb.toString();
     }
 }
