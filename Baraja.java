@@ -8,6 +8,7 @@ package es.uvigo.esei.aed1.core;
 
 import cola.Cola;
 import cola.EnlazadaCola;
+import es.uvigo.esei.aed1.core.Carta.Palo;
 
 
 public class Baraja {
@@ -18,16 +19,16 @@ public class Baraja {
         baraja = new EnlazadaCola<>();
         
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Espadas",i + 1));
+            baraja.insertar(new Carta(Palo.Espadas,i+1));
         }
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Oros",i + 1));
+            baraja.insertar(new Carta(Palo.Oros,i + 1));
         }
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Bastos",i + 1));
+            baraja.insertar(new Carta(Palo.Bastos,i + 1));
         }
         for(int i = 0; i < 12;i++){
-            baraja.insertar(new Carta("Copas",i + 1));
+            baraja.insertar(new Carta(Palo.Copas,i + 1));
         }
     }
     
@@ -76,3 +77,4 @@ public class Baraja {
     
    
 }
+
