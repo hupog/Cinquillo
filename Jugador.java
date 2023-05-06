@@ -8,18 +8,23 @@ package es.uvigo.esei.aed1.core;
 
 import java.util.ArrayList;
 import java.util.List;
-import pila.Pila;
 
 public class Jugador {
     private String nombre;
     private List<Carta> mano;
+    private int puntosPartida;
+    private int puntosAsDeOro;
     private int puntosAcumulados;
 
     public Jugador(String nombre) {
         this.nombre = nombre;
-        this.mano = new ArrayList<Carta>();
-        this.puntosAcumulados = 0;
+        this.mano = new ArrayList<>();
+        this.puntosPartida = 0;
+        this.puntosAsDeOro = 0;
+        this.puntosAcumulados = puntosPartida + puntosAsDeOro;
     }
+    
+    
 
     public String getNombre() {
         return nombre;
@@ -33,27 +38,61 @@ public class Jugador {
         return puntosAcumulados;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public int getPuntosPartida() {
+        return puntosPartida;
     }
 
-    public void setMano(List<Carta> mano) {
-        this.mano = mano;
+    public int getPuntosAsDeOro() {
+        return puntosAsDeOro;
+    }
+
+    public void setPuntosPartida(int puntosPartida) {
+        this.puntosPartida = puntosPartida;
+    }
+
+    public void setPuntosAsDeOro(int puntosAsDeOro) {
+        this.puntosAsDeOro = puntosAsDeOro;
     }
 
     public void setPuntosAcumulados(int puntosAcumulados) {
         this.puntosAcumulados = puntosAcumulados;
     }
     
+    
+
     //Insertar una carta a la mano
     public void añadirCartas(Carta carta){
         mano.add(carta);
     }
     
     public void enseñarMano(){
+        int i = 0;
         for (Carta carta : mano) {
-            System.out.println(carta.toString());
+            System.out.println("[" + i + "]" + "\t" + carta.toString());
+            i++;
         }
     }
+    
+    public int size(){
+        if(getMano().isEmpty()){
+            return 0;
+        }else{
+            return getMano().size();
+        }
+    }
+    
+    public void removeCarta(Carta c){
+        getMano().remove(c);
+    }
+    
+    public boolean tieneCartasValidas (Mesa mesa){
+        for(int i = 0; i < mano.size(); i++){
+            if(mesa.cartaValida(mano.get(i))){
+                return true;
+            }
+        }
+        return false;
+    }
+    
     
 }
