@@ -3,9 +3,9 @@
  * Estructura mano: se utilizará un TAD adecuado
  * Funcionalidad: Añadir carta a la mano, convertir a String el objeto Jugador (toString)
  */
-
 package es.uvigo.esei.aed1.core;
 
+import es.uvigo.esei.aed1.core.Carta.Palo;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -94,5 +94,19 @@ public class Jugador {
         return false;
     }
     
+    public boolean comprobarAsOros(int num){
+        return getMano().get(num).getNumero() == 1 && getMano().get(num).getPalo().equals(Palo.Oros);
+    }
     
+    public void eliminarMano(){
+        for (int i = 0; i < size(); i++) {
+            if(!getMano().isEmpty()){
+                mano.remove(i);
+            }
+            
+        }
+    }
+    public void eliminarCarta(Carta c){
+        getMano().remove(c);
+    }
 }
